@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./RegisterForm.css";
 import { supabase } from "../../Utils/supabase.js";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const RegisterForm = () => {
     const navigate = useNavigate();
@@ -44,8 +45,7 @@ const RegisterForm = () => {
             navigate('/login');
 
         } catch (error) {
-            console.log('Error: ', error.message);
-            alert(error);
+            toast.error(error?.message ?? 'Error signing up');
         }
     }
 
