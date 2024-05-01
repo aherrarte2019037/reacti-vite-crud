@@ -11,10 +11,14 @@ const CustomNavbar = ({ selectedLink }) => {
         navigation('/dashboard');
     }
 
+    async function navigateToDashboard() {
+        navigation('/dashboard');
+    }
+
     return (
         <Navbar isBordered>
             <NavbarContent justify="center">
-                <NavbarBrand className="mr-4">
+                <NavbarBrand onClick={navigateToDashboard} className="mr-4 cursor-pointer">
                     <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
                         <path
                             clipRule="evenodd"
