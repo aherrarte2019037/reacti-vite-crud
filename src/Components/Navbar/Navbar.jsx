@@ -8,7 +8,7 @@ const CustomNavbar = ({ selectedLink }) => {
 
     async function signOut() {
         await supabase.auth.signOut();
-        navigation('/login');
+        navigation('/dashboard');
     }
 
     return (

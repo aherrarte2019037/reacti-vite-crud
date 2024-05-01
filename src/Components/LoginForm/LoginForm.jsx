@@ -29,7 +29,7 @@ const LoginForm = () => {
                 access_token: data.session.access_token,
                 refresh_token: data.session.refresh_token,
             })
-            navigate('/dashboard');
+            navigate('/admin');
 
         } catch (error) {
             toast.error(error?.message ?? 'Error signing in');

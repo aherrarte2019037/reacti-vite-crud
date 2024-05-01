@@ -43,16 +43,12 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element:
-      <PrivateRoute>
-        < Dashboard />
-      </PrivateRoute>
+      < Dashboard />
   },
   {
     path: "/blog/:id",
     element:
-      <PrivateRoute>
-        < BlogPage />
-      </PrivateRoute>
+      < BlogPage />
   },
   {
     path: "/admin",
