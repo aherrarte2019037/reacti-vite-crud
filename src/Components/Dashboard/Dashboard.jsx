@@ -8,7 +8,7 @@ import BlogList from "../BlogList/BlogList";
 const Dashboard = () => {
     return (
         <div className="w-screen h-screen flex flex-col">
-            <CustomNavbar />
+            <CustomNavbar selectedLink={'blog'}/>
             <Hero />
             <BlogList />
             <Footer />

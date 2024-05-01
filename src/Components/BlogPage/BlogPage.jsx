@@ -18,7 +18,7 @@ export default function BlogPage() {
 
     return (
         <div className="w-screen h-screen flex flex-col">
-            <CustomNavbar />
+            <CustomNavbar selectedLink={'blog'}/>
             <section>
                 <div className="max-w-screen-xl mx-auto px-4 py-28 pb-12 gap-12 text-gray-600 md:px-8">
                     <div className="space-y-5 max-w-2xl mx-auto text-center">

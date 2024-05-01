@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "../../Utils/supabase";
 import AdminTable from "../AdminTable/AdminTable";
 import toast from "react-hot-toast";
+import CustomNavbar from "../Navbar/Navbar";
 
 export default function Admin() {
     const [blogItems, setBlogItems] = useState([]);
@@ -96,13 +97,15 @@ export default function Admin() {
     };
 
     return (
-        <div className="w-screen h-screen flex flex-col p-20">
-            <div className="mx-auto max-w-screen-sm text-center lg:mb-10 mb-8">
+        <div className="w-screen h-screen flex flex-col">
+            <CustomNavbar selectedLink={'admin'}/>
+            
+            <div className="mx-auto max-w-screen-sm text-center lg:mb-10 mb-8 pt-10">
                 <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">AceServe Admin Dashboard</h2>
                 <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Manage all the content of AceServe Blog</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto">
+            <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto px-10">
                 <div className="flex flex-wrap -mx-3 mb-2">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label className="block tracking-wide text-gray-700 text-xs font-bold mb-2">

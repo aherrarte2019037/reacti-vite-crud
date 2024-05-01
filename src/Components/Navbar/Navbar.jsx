@@ -3,7 +3,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownIt
 import { useNavigate } from "react-router-dom";
 import { supabase } from '../../Utils/supabase';
 
-const CustomNavbar = () => {
+const CustomNavbar = ({ selectedLink }) => {
     const navigation = useNavigate();
 
     async function signOut() {
@@ -27,12 +27,12 @@ const CustomNavbar = () => {
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-3">
                     <NavbarItem isActive>
-                        <Link color="primary" href="#" aria-current="page">
+                        <Link color={selectedLink === 'blog' ? 'primary' : 'foreground'} href="/dashboard">
                             Blog
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/admin" color="foreground">
+                        <Link href="/admin" color={selectedLink === 'admin' ? 'primary' : 'foreground'}>
                             Admin
                         </Link>
                     </NavbarItem>
