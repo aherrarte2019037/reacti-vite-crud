@@ -60,10 +60,12 @@ export default function Admin() {
         } else {
             const { data, error } = await supabase
                 .from('Blogs')
-                .insert(blogData);
+                .insert(blogData)
+                .select()
+                .single();
 
             if (data) {
-                setBlogItems([...blogItems, data[0]]);
+                setBlogItems([...blogItems, data]);
                 toast.success("Blog post created successfully");
             }
             if (error) {
