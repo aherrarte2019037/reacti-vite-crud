@@ -14,6 +14,7 @@ import AuthChecker from './Components/AuthChecker/AuthChecker';
 import PrivateRoute from './Components/AuthChecker/PrivateRoute';
 import { Toaster } from 'react-hot-toast';
 import BlogPage from './Components/BlogPage/BlogPage';
+import Admin from './Components/Admin/Admin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -51,6 +52,13 @@ const router = createBrowserRouter([
     element:
       <PrivateRoute>
         < BlogPage />
+      </PrivateRoute>
+  },
+  {
+    path: "/admin",
+    element:
+      <PrivateRoute>
+        < Admin />
       </PrivateRoute>
   },
 ]);

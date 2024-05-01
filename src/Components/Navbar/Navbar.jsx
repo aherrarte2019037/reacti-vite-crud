@@ -32,7 +32,7 @@ const CustomNavbar = () => {
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="#" color="foreground">
+                        <Link href="/admin" color="foreground">
                             Admin
                         </Link>
                     </NavbarItem>
