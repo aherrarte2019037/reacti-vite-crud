@@ -13,6 +13,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import AuthChecker from './Components/AuthChecker/AuthChecker';
 import PrivateRoute from './Components/AuthChecker/PrivateRoute';
 import { Toaster } from 'react-hot-toast';
+import BlogPage from './Components/BlogPage/BlogPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -45,7 +46,13 @@ const router = createBrowserRouter([
         < Dashboard />
       </PrivateRoute>
   },
-
+  {
+    path: "/blog/:id",
+    element:
+      <PrivateRoute>
+        < BlogPage />
+      </PrivateRoute>
+  },
 ]);
 
 root.render(

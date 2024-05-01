@@ -6,12 +6,12 @@ export default function BlogList() {
     const [blogItems, setBlogItems] = useState([]);
 
     useEffect(() => {
-      getBlogItems();
+        getBlogItems();
     }, []);
 
     async function getBlogItems() {
-      const { data } = await supabase.from("Blogs").select();
-      setBlogItems(data);
+        const { data } = await supabase.from("Blogs").select();
+        setBlogItems(data);
     }
 
     return (
@@ -22,9 +22,9 @@ export default function BlogList() {
                     <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Check our latest blogs about anything related to tennis. Stay updated about the last matchs, tournaments, etc</p>
                 </div>
 
-                <div class="grid gap-8 lg:grid-cols-2">
+                <div className="grid gap-8 lg:grid-cols-2">
                     {blogItems.map((blogData) => (
-                        <BlogItem blog={blogData}/>
+                        <BlogItem key={blogData.id} blog={blogData} />
                     ))}
                 </div>
             </div>
